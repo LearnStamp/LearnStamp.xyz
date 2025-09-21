@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { StampCard } from "./StampCard"
+import { YouTubePlayer, type YouTubePlayerInstance } from "./YouTubePlayer"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -23,28 +24,41 @@ export function VideoDemo() {
   })
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const playerRef = useRef<YouTubePlayerInstance | null>(null)
 
-  const { title, description, stamps, url, thumbnail, channel, views, publishedDate, duration } = sampleVideoData
+  const { title, description, stamps, url, thumbnail, channel, views, publishedDate, videoId } = sampleVideoData
   const currentStampData = stamps[currentStamp]
 
-  // Simulate video playback
-  useEffect(() => {
-    let interval: NodeJS.Timeout
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentTime(prev => {
-          const newTime = prev + 1
-          // Auto-pause when reaching the end
-          if (newTime >= duration) {
-            setIsPlaying(false)
-            return duration
-          }
-          return newTime
-        })
-      }, 1000)
+  const handlePlayerReady = (player: YT.Player) => {
+    setDuration(player.getDuration())
+    // Store player reference for manual control
+    playerRef.current = {
+      play: () => player.playVideo(),
+      pause: () => player.pauseVideo(),
+      seekTo: (seconds: number) => player.seekTo(seconds, true),
+      getCurrentTime: () => player.getCurrentTime(),
+      getDuration: () => player.getDuration(),
+      getPlayerState: () => player.getPlayerState(),
+      player
     }
-    return () => clearInterval(interval)
-  }, [isPlaying, duration])
+  }
+
+  const handleTimeUpdate = (time: number) => {
+    setCurrentTime(time)
+  }
+
+  const handlePlay = () => {
+    setIsPlaying(true)
+  }
+
+  const handlePause = () => {
+    setIsPlaying(false)
+  }
+
+  const handleEnd = () => {
+    setIsPlaying(false)
+  }
 
   const handleAnswer = (stampId: string, _choiceId: string, isCorrect: boolean) => {
     setUserProgress(prev => {
@@ -78,12 +92,16 @@ export function VideoDemo() {
     })
     setCurrentTime(0)
     setIsPlaying(false)
+    if (playerRef.current) {
+      playerRef.current.seekTo(0)
+      playerRef.current.pause()
+    }
   }
 
   const formatTime = (seconds: number): string => {
     const hours = Math.floor(seconds / 3600)
     const minutes = Math.floor((seconds % 3600) / 60)
-    const remainingSeconds = seconds % 60
+    const remainingSeconds = Math.floor(seconds % 60)
     
     if (hours > 0) {
       return `${hours}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`
@@ -93,7 +111,19 @@ export function VideoDemo() {
 
   const goToStamp = (index: number) => {
     setCurrentStamp(index)
-    setCurrentTime(stamps[index].timestamp)
+    if (playerRef.current) {
+      playerRef.current.seekTo(stamps[index].timestamp)
+    }
+  }
+
+  const togglePlayback = () => {
+    if (playerRef.current) {
+      if (isPlaying) {
+        playerRef.current.pause()
+      } else {
+        playerRef.current.play()
+      }
+    }
   }
 
   const openYouTubeVideo = () => {
@@ -134,24 +164,20 @@ export function VideoDemo() {
           </div>
         </CardHeader>
         <CardContent>
-          {/* Mock Video Player with Real Thumbnail */}
-          <div className="relative bg-black rounded-lg aspect-video flex items-center justify-center mb-4 overflow-hidden">
-            <img 
-              src={thumbnail} 
-              alt={title}
-              className="w-full h-full object-cover"
+          {/* Embedded YouTube Player */}
+          <div className="relative rounded-lg aspect-video mb-4 overflow-hidden">
+            <YouTubePlayer
+              videoId={videoId}
+              onReady={handlePlayerReady}
+              onPlay={handlePlay}
+              onPause={handlePause}
+              onEnd={handleEnd}
+              onTimeUpdate={handleTimeUpdate}
+              className="w-full h-full"
+              controls={true}
+              width="100%"
+              height="100%"
             />
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-              <div className="text-white text-center">
-                <div className="text-6xl mb-4">
-                  {isPlaying ? "⏸️" : "▶️"}
-                </div>
-                <div className="text-xl mb-2">LearnStamp Demo Player</div>
-                <div className="text-lg font-mono bg-black/50 px-3 py-1 rounded">
-                  {formatTime(currentTime)} / {formatTime(duration)}
-                </div>
-              </div>
-            </div>
           </div>
           
           {/* Video Controls */}
@@ -160,7 +186,7 @@ export function VideoDemo() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={togglePlayback}
               >
                 {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                 {isPlaying ? "Pause" : "Play"}
@@ -173,6 +199,9 @@ export function VideoDemo() {
                 <RotateCcw className="w-4 h-4" />
                 Reset
               </Button>
+              <div className="text-sm text-muted-foreground font-mono">
+                {formatTime(currentTime)} / {formatTime(duration)}
+              </div>
             </div>
             
             {/* Progress Stats */}
