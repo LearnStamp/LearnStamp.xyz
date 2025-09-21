@@ -32,9 +32,9 @@ function App() {
           <div className="flex items-center justify-between">
             <img src="/logo.png" alt="LearnStamp" className="h-12" />
             <div className="flex items-center gap-4">
-              <Button variant="ghost">About</Button>
-              <Button variant="ghost">Features</Button>
-              <Button variant="outline">Sign In</Button>
+              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-primary/10">About</Button>
+              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-primary/10">Features</Button>
+              <Button variant="outline" className="text-foreground border-foreground/20 hover:bg-primary hover:text-primary-foreground hover:border-primary">Sign In</Button>
             </div>
           </div>
         </div>
@@ -58,13 +58,13 @@ function App() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Button size="lg" className="text-lg px-12 py-6 h-auto">
+              <Button size="lg" className="text-lg px-12 py-6 h-auto bg-primary text-primary-foreground hover:bg-primary/90">
                 Start Learning
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="text-lg px-12 py-6 h-auto"
+                className="text-lg px-12 py-6 h-auto text-foreground border-foreground/30 hover:bg-primary hover:text-primary-foreground hover:border-primary"
                 onClick={() => setShowDemo(true)}
               >
                 Try Live Demo
@@ -89,7 +89,9 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center space-y-4 p-6 rounded-lg bg-background border">
               <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-4xl">⏱️</span>
+                <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold text-foreground">Timestamp-First Learning</h3>
               <p className="text-foreground/70">
@@ -99,7 +101,9 @@ function App() {
             
             <div className="text-center space-y-4 p-6 rounded-lg bg-background border">
               <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-4xl">👥</span>
+                <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold text-foreground">Community-Refined Quality</h3>
               <p className="text-foreground/70">
@@ -109,7 +113,9 @@ function App() {
             
             <div className="text-center space-y-4 p-6 rounded-lg bg-background border">
               <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-4xl">🏆</span>
+                <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold text-foreground">Verifiable Achievements</h3>
               <p className="text-foreground/70">
@@ -154,13 +160,13 @@ function App() {
             Join thousands of learners who are already earning verified stamps and building their knowledge with LearnStamp
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" variant="secondary" className="text-lg px-12 py-6 h-auto font-semibold">
+            <Button size="lg" variant="secondary" className="text-lg px-12 py-6 h-auto font-semibold bg-primary-foreground text-primary hover:bg-primary-foreground/90">
               Get Started Free
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-12 py-6 h-auto border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold"
+              className="text-lg px-12 py-6 h-auto border-2 border-primary-foreground/80 text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary font-semibold"
               onClick={() => setShowDemo(true)}
             >
               Watch Demo

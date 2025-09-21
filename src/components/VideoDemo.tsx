@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState,  useRef } from "react"
 import { StampCard } from "./StampCard"
 import { YouTubePlayer, type YouTubePlayerInstance } from "./YouTubePlayer"
 import { Button } from "@/components/ui/button"
@@ -27,7 +27,7 @@ export function VideoDemo() {
   const [duration, setDuration] = useState(0)
   const playerRef = useRef<YouTubePlayerInstance | null>(null)
 
-  const { title, description, stamps, url, thumbnail, channel, views, publishedDate, videoId } = sampleVideoData
+  const { title, description, stamps, url,  channel, views, publishedDate, videoId } = sampleVideoData
   const currentStampData = stamps[currentStamp]
 
   const handlePlayerReady = (player: YT.Player) => {
