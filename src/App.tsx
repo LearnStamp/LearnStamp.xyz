@@ -32,8 +32,10 @@ function App() {
           <div className="flex items-center justify-between">
             <img src="/logo.png" alt="LearnStamp" className="h-12" />
             <div className="flex items-center gap-4">
-              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-primary/10">About</Button>
-              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-primary/10">Features</Button>
+              <nav className="hidden md:flex items-center gap-6">
+                <a href="/about" className="text-foreground/70 hover:text-foreground transition-colors">About</a>
+                <a href="/features" className="text-foreground/70 hover:text-foreground transition-colors">Features</a>
+              </nav>
               <Button variant="outline" className="text-foreground border-foreground/20 hover:bg-primary hover:text-primary-foreground hover:border-primary">Sign In</Button>
             </div>
           </div>
@@ -184,8 +186,8 @@ function App() {
               <span className="text-sm text-foreground/70 font-medium">© 2024 LearnStamp. All rights reserved.</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-foreground/70 font-medium">
-              <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-              <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+              <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
+              <a href="/terms" className="hover:text-foreground transition-colors">Terms</a>
               <a href="https://x.com/learnstamp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">X</a>
             </div>
           </div>
