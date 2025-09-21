@@ -49,50 +49,6 @@ U2U’s DAG-based Layer-1 with EVM compatibility supports high-throughput, low-l
 - Optional subnets for campuses or enterprise partners with custom policies while anchoring proofs to U2U mainnet.[^12][^14]
 
 
-### Track fit and judging
-
-- Innovation: reimagines video learning with verifiable, timestamped peer assessment native to Web3 rails.[^15][^1]
-- Practicality: frictionless overlay and browser extension; works with existing YouTube behaviors and study groups.[^22][^23]
-- UX: optional, low-friction checks that enrich—not interrupt—watching, guided by proven gamification patterns.[^9][^17]
-- Technical: demonstrates DAG-scale micro-interactions, EVM contracts, and AI-assisted content with verifiable on-chain outcomes.[^13][^14]
-- U2U integration: highlights DAG, EVM, subnets, and aligns with SocialFi + AI tracks and hackathon criteria.[^15][^1]
-
-
-### Demo plan
-
-- Live browser extension overlay on selected YouTube educational videos with stamping, answering, and minting live on U2U testnet/mainnet.[^24][^1]
-- Creator dashboard showing confusion hotspots, stamp pass rates, and concept graphs.[^2][^3]
-- Learner profile displaying on-chain stamps and topic mastery across videos.[^14][^1]
-
-
-### Documentation
-
-- README covering goals, feature set, and SocialFi + AI positioning, with step-by-step U2U deployment instructions and RPC config.[^24][^1]
-- Architecture notes: contracts, indexer flow, AI pipeline, and how DAG characteristics informed design decisions.[^13][^14]
-
-
-### Pitch (100–300 words)
-
-LearnStamp transforms educational videos into social, verifiable learning by letting viewers drop and answer timestamped “stamps” that certify understanding on U2U’s DAG + EVM.  The crowd collaboratively curates the best micro-quizzes at the exact moments confusion occurs, while AI drafts suggestions that learners refine and approve, creating a living, high-signal concept graph per video and topic.  For creators, LearnStamp surfaces precise confusion hotspots and pass rates they cannot get today, enabling targeted improvements and stronger community engagement.  U2U’s high-throughput, fast-finality architecture powers millions of bite-sized interactions without lag, and subnets open paths for schools and enterprises to run custom rails while anchoring proofs on mainnet.  The result is a simple, brilliant layer that lets anyone learn together—and prove it—turning passive viewing into collective understanding at internet scale.[^8][^21][^1][^4][^9][^13][^14][^2]
-
-### GTM and growth
-
-- Seed with mid-tier edu creators who gain unique learning analytics and community kudos.[^7][^21]
-- University study groups adopt LearnStamp for shared checkpoints and portable proof-of-understanding.[^23][^22]
-- Align with U2U’s grants, mentorship, and PR to onboard SocialFi + AI partners.[^25][^1]
-
-
-### Milestones and KPIs
-
-- Week 1: U2U deploy, 5 pilot channels, 1K stamps minted, <2s stamp-to-proof latency.[^15][^1]
-- Month 1: 50K answers, 5K unique learners, 200 creator dashboards activated.[^21][^14]
-- Month 3: Subnet pilot with an education partner for policy-controlled rails.[^12][^14]
-
-
-### Why it wins VietBUIDL
-
-It showcases U2U’s DAG strength with dense, real-time social interactions, demonstrates clean EVM integration, and delivers immediate real-world impact for learners and creators in a SocialFi + AI format judges can feel in a live demo.  The idea is obvious once seen, yet novel in execution, harnessing crowdsourcing to measurably improve learning outcomes with verifiable proofs on U2U.  It aligns with the hackathon’s criteria and timeline, positioning for investment and ecosystem acceleration.[^26][^1][^4][^13][^15][^2]
-<span style="display:none">[^27][^28][^29][^30][^31][^32][^33][^34][^35][^36][^37][^38]</span>
 
 <div style="text-align: center">⁂</div>
 
