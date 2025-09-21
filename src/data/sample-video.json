@@ -1,0 +1,140 @@
+{
+  "id": "react-hooks-course",
+  "title": "React Hooks Course - All React Hooks Explained",
+  "description": "Complete tutorial covering every single core hook from React including useState, useEffect, useContext, and more",
+  "duration": 5280,
+  "url": "https://www.youtube.com/watch?v=LlvBzyy-558",
+  "videoId": "LlvBzyy-558",
+  "thumbnail": "https://img.youtube.com/vi/LlvBzyy-558/maxresdefault.jpg",
+  "channel": "PedroTech",
+  "views": "1.1M views",
+  "publishedDate": "Aug 2, 2021",
+  "stamps": [
+    {
+      "id": "stamp-1",
+      "timestamp": 180,
+      "question": "What is the primary purpose of React Hooks?",
+      "difficulty": "easy",
+      "choices": [
+        {
+          "id": "choice-1",
+          "text": "To add state and lifecycle methods to functional components",
+          "isCorrect": true
+        },
+        {
+          "id": "choice-2", 
+          "text": "To replace class components entirely",
+          "isCorrect": false
+        },
+        {
+          "id": "choice-3",
+          "text": "To improve performance of React applications",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "React Hooks allow you to use state and other React features in functional components, making them more powerful and flexible without needing class components."
+    },
+    {
+      "id": "stamp-2",
+      "timestamp": 612,
+      "question": "Which Hook is used for managing component state?",
+      "difficulty": "easy",
+      "choices": [
+        {
+          "id": "choice-4",
+          "text": "useEffect",
+          "isCorrect": false
+        },
+        {
+          "id": "choice-5",
+          "text": "useState",
+          "isCorrect": true
+        },
+        {
+          "id": "choice-6",
+          "text": "useContext",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "useState is the Hook that lets you add state to functional components. It returns the current state value and a function to update it."
+    },
+    {
+      "id": "stamp-3",
+      "timestamp": 1292,
+      "question": "When does useEffect run by default?",
+      "difficulty": "medium",
+      "choices": [
+        {
+          "id": "choice-7",
+          "text": "Only on component mount",
+          "isCorrect": false
+        },
+        {
+          "id": "choice-8",
+          "text": "After every render",
+          "isCorrect": true
+        },
+        {
+          "id": "choice-9",
+          "text": "Only when dependencies change",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "By default, useEffect runs after every render (both mount and update). You can control this behavior with the dependency array as the second argument."
+    },
+    {
+      "id": "stamp-4",
+      "timestamp": 1788,
+      "question": "What is useContext used for?",
+      "difficulty": "medium",
+      "choices": [
+        {
+          "id": "choice-10",
+          "text": "Managing component state locally",
+          "isCorrect": false
+        },
+        {
+          "id": "choice-11",
+          "text": "Consuming values from React Context without nesting",
+          "isCorrect": true
+        },
+        {
+          "id": "choice-12",
+          "text": "Creating side effects in components",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "useContext allows you to consume context values directly in functional components without wrapping them in Context.Consumer components."
+    },
+    {
+      "id": "stamp-5",
+      "timestamp": 2281,
+      "question": "What does useReducer help with?",
+      "difficulty": "hard",
+      "choices": [
+        {
+          "id": "choice-13",
+          "text": "Managing complex state logic with actions",
+          "isCorrect": true
+        },
+        {
+          "id": "choice-14",
+          "text": "Optimizing component re-renders",
+          "isCorrect": false
+        },
+        {
+          "id": "choice-15",
+          "text": "Creating references to DOM elements",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "useReducer is useful for managing complex state logic that involves multiple sub-values or when the next state depends on the previous one. It accepts a reducer function and returns the current state and a dispatch function."
+    }
+  ],
+  "userProgress": {
+    "completedStamps": [],
+    "currentTimestamp": 0,
+    "totalStampsEarned": 0,
+    "accuracy": 0
+  }
+}
