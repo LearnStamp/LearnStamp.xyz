@@ -186,7 +186,7 @@ function App() {
             <div className="flex items-center gap-6 text-sm text-foreground/70 font-medium">
               <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
               <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-              <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+              <a href="https://x.com/learnstamp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">X</a>
             </div>
           </div>
         </div>
