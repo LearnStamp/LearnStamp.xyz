@@ -46,7 +46,7 @@ export function VideoDemo() {
     return () => clearInterval(interval)
   }, [isPlaying, duration])
 
-  const handleAnswer = (stampId: string, choiceId: string, isCorrect: boolean) => {
+  const handleAnswer = (stampId: string, _choiceId: string, isCorrect: boolean) => {
     setUserProgress(prev => {
       const newCompletedStamps = [...prev.completedStamps, stampId]
       const newTotalEarned = prev.totalStampsEarned + (isCorrect ? 1 : 0)
